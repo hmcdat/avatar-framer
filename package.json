@@ -4,12 +4,15 @@
   "description": "",
   "main": "postcss.config.js",
   "dependencies": {
-    "@tailwindcss/aspect-ratio": "^0.2.2",
-    "browserify": "^17.0.0",
-    "concurrently": "^8.2.2",
+    "@tailwindcss/aspect-ratio": "^0.2.1",
+    "@tailwindcss/forms": "^0.3.3",
+    "@tailwindcss/typography": "^0.4.1",
+    "autoprefixer": "^10.3.1",
+    "browserify-shim": "^3.8.16",
     "dropzone": "5.7.2",
     "fabric": "^4.2.0",
-    "onchange": "^7.1.0",
+    "save": "^2.9.0",
+    "tailwindcss": "^2.2.7",
     "terser": "^5.3.4"
   },
   "devDependencies": {

@@ -9,11 +9,18 @@ const fabric = require('fabric').fabric;
 Dropzone.autoDiscover = false;
 
 document.addEventListener("DOMContentLoaded", function(){
+    var ua = navigator.userAgent || navigator.vendor || window.opera;
+    if (ua.indexOf("FBAN") > -1 || ua.indexOf("FBAV") > -1) {
+        alert("Hiện tại, trang web không hỗ trợ trình duyệt in-app của Facebook, bạn vui lòng mở trang web bằng trình duyệt hệ thống nhé!\n\n(Chọn dấu 3 chấm ở góc -> chọn 'Mở bằng trình duyệt hệ thống')");
+        document.body.innerHTML = "<img src='img/facebook.png'>"
+    }
+
 
   // define the canvas
   const canvas = this.__canvas = new fabric.Canvas('c', {
     width: 500,
-    height: 500
+    height: 500,
+    backgroundColor: "#ffffff",
   });
 
   // image to be added to the canvas
@@ -52,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function(){
     };
 
     function updateControls() {
-      scaleControl.value = image.scaleX;
+      scaleControl.value = image.scaleX * 200;
       angleControl.value = image.angle;
     }
     canvas.on({
@@ -190,3 +197,5 @@ function changeFrame(canvas, image) {
 window.addEventListener('resize', function() {
   resizeCanvas();
 });
+
+
